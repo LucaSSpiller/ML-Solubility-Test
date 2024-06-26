@@ -7,7 +7,7 @@ Este projeto de machine learning identifica se um composto é solúvel ou não e
 
 Os dados de treinamento consistem em vetores que representam diferentes compostos químicos, com características binárias simplificadas. Cada composto é rotulado como 'S' (Solúvel) ou 'N' (Não Solúvel).
 
-```
+```python
 composto1 = [1, 1, 1]
 composto2 = [0, 0, 0]
 composto3 = [1, 0, 1]
@@ -22,7 +22,8 @@ rotulos_treino = ['S', 'N', 'S', 'N', 'S', 'S']
 ### Treinamento do Modelo
 
 O modelo `LinearSVC` é treinado utilizando os dados de treinamento acima.
-```
+
+```python
 from sklearn.svm import LinearSVC
 
 modelo = LinearSVC()
@@ -31,7 +32,7 @@ modelo.fit(dados_treino, rotulos_treino)
 ### Dados de Teste
 
 Os dados de teste são novos compostos cujas solubilidades devem ser previstas pelo modelo.
-```
+```python
 teste1 = [1, 0, 0]
 teste2 = [0, 1, 1]
 teste3 = [1, 0, 1]
@@ -42,7 +43,7 @@ dados_teste = [teste1, teste2, teste3]
 
 O modelo faz previsões sobre os dados de teste e as mapeia para uma descrição mais amigável.
 
-```
+```python
 previsoes = modelo.predict(dados_teste)
 mapeamento_previsoes = {'S': 'Solúvel', 'N': 'Não Solúvel'}
 
